@@ -7,6 +7,7 @@ require("./database/db");
 
 const homeRouter = require("./routes/home");
 const authRouter = require("./routes/auth");
+const { urlencoded } = require("express");
 
 // Server Init
 const app = express();
@@ -23,6 +24,7 @@ app.set("views", "./views");
 
 // Middlewares
 app.use(express.static(__dirname + "/public")); // Ruta publica
+app.use(express.urlencoded({ extended: true }));
 app.use("/", homeRouter);
 app.use("/auth", authRouter);
 
