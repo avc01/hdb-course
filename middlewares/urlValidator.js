@@ -1,4 +1,3 @@
-const { throws } = require("assert");
 const { URL } = require("url");
 
 const validateUrl = (req, res, next) => {
